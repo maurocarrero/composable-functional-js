@@ -1,3 +1,8 @@
+console.log('*********************************************************************************************************')
+console.log('Next char from number string')
+console.log('*********************************************************************************************************')
+
+
 const STR = '     64  '
 const PLAIN = require('./nextChartFromNumberString')(STR)
 const CHAIN = require('./chainedNextCharFromNumberString')(STR)

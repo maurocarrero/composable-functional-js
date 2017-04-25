@@ -1,9 +1,10 @@
-console.log('*********************************************************************************************************')
-console.log('Either type: Left || Right')
-console.log('*********************************************************************************************************')
+const log = require('../log')
+const expect = require('expect')
 
-// Either is defined as:
-// const Either = Left || Right
+log('*********************************************************************************************************')
+log('Either type: Left || Right')
+log('Either is defined as:')
+log('    const Either = Left || Right')
 
 const Right = x => ({
   inspect: () => `Right(${x})`,
@@ -17,8 +18,20 @@ const Left = x => ({
   map: fn => Left(x)
 })
 
-const leftResult = Left(3).map(num => num + 4).fold(x => 'error', num => num)
-const rightResult = Right(3).map(num => num + 4).fold(x => 'error', num => num)
+const leftResult = Left(3).map(num => num + 4).map(x => 'error', num => num).inspect()
 
-console.log('Left result', leftResult)
-console.log('Right result', rightResult)
+const rightResult = Right(3).map(num => num + 4).map(x => 'error', num => num).inspect()
+
+expect(leftResult).toExist()
+expect(rightResult).toExist()
+
+log('const Right =', Right.toString())
+log('const Left =', Left.toString())
+
+log(leftResult, 'const leftResult = Left(3).map(num => num + 4).fold(x => \'error\', num => num)')
+log(rightResult, 'const rightResult = Right(3).map(num => num + 4).fold(x => \'error\', num => num)')
+
+log(`Left result = ${leftResult}`)
+log(`Right result = ${rightResult}`)
+
+console.log('*********************************************************************************************************')

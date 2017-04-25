@@ -1,6 +1,6 @@
 const args = process.argv
 
-const parseAnswer = (answer) => {
+const parseAnswer = (answer, read) => {
   switch (answer) {
     case '1':
       require('./next-char-from-number-string')
@@ -11,7 +11,7 @@ const parseAnswer = (answer) => {
     case '3':
       require('./either-type')
     default:
-      console.log('Not a valid option.')
+      read ? console.log('Not a valid option.') : ''
   }
 }
 

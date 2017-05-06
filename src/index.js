@@ -28,6 +28,9 @@ const parseAnswer = (answer, read) => {
     case '9':
       require('./imperative-vs-declarative/wrapExamples')
       break
+    case '10':
+      require('./imperative-vs-declarative/parseDbUrl')
+      break
     default:
       read ? console.log('Not a valid option.') : ''
   }
@@ -47,6 +50,7 @@ if (args.length > 2) {
   console.log('7. Imperative vs Declarative: streetName')
   console.log('8. Imperative vs Declarative: concatUniq')
   console.log('9. Imperative vs Declarative: wrapExamples')
+  console.log('10. Imperative vs Declarative: parseDbUrl')
   console.log('')
 
   const readline = require('readline')
@@ -56,7 +60,7 @@ if (args.length > 2) {
     output: process.stdout
   });
 
-  rl.question('Sample [1-7]?', answer => {
+  rl.question('Sample [1-10]?', answer => {
     parseAnswer(answer)
     rl.close()
   })

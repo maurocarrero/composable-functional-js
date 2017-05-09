@@ -19,6 +19,7 @@ const parseAnswer = (answer, read) => {
       break
     case '6':
       require('./imperative-vs-declarative/getPrefs')
+      break
     case '7':
       require('./imperative-vs-declarative/streetName')
       break
@@ -30,6 +31,12 @@ const parseAnswer = (answer, read) => {
       break
     case '10':
       require('./imperative-vs-declarative/parseDbUrl')
+      break
+    case '11':
+      require('./semigroups')
+      break
+    case '12':
+      require('./semigroups/monoids')
       break
     default:
       read ? console.log('Not a valid option.') : ''
@@ -51,6 +58,8 @@ if (args.length > 2) {
   console.log('8. Imperative vs Declarative: concatUniq')
   console.log('9. Imperative vs Declarative: wrapExamples')
   console.log('10. Imperative vs Declarative: parseDbUrl')
+  console.log('11. Semigroups')
+  console.log('12. Semigroups: Monoids')
   console.log('')
 
   const readline = require('readline')
@@ -60,7 +69,7 @@ if (args.length > 2) {
     output: process.stdout
   });
 
-  rl.question('Sample [1-10]?', answer => {
+  rl.question('Sample [1-12]?', answer => {
     parseAnswer(answer)
     rl.close()
   })

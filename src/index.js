@@ -1,52 +1,40 @@
 const args = process.argv
 
+const chapters = [
+  './next-char-from-number-string',
+  './money-to-float',
+  './either-type',
+  './either-type/getPort',
+  './imperative-vs-declarative/openSite',
+  './imperative-vs-declarative/getPrefs',
+  './imperative-vs-declarative/streetName',
+  './imperative-vs-declarative/concatUniq',
+  './imperative-vs-declarative/wrapExamples',
+  './imperative-vs-declarative/parseDbUrl',
+  './semigroups',
+  './semigroups/monoids',
+  './semigroups/monoids/Sum',
+  './semigroups/monoids/Product',
+  './semigroups/monoids/Any',
+  './semigroups/monoids/All',
+  './semigroups/monoids/Max',
+  './semigroups/monoids/Min',
+  './semigroups/monoids/Pair'
+]
+
 const parseAnswer = (answer, read) => {
-  switch (answer) {
-    case '1':
-      require('./next-char-from-number-string')
-      break
-    case '2':
-      require('./money-to-float')
-      break
-    case '3':
-      require('./either-type')
-      break
-    case '4':
-      require('./either-type/getPort')
-      break
-    case '5':
-      require('./imperative-vs-declarative/openSite')
-      break
-    case '6':
-      require('./imperative-vs-declarative/getPrefs')
-      break
-    case '7':
-      require('./imperative-vs-declarative/streetName')
-      break
-    case '8':
-      require('./imperative-vs-declarative/concatUniq')
-      break
-    case '9':
-      require('./imperative-vs-declarative/wrapExamples')
-      break
-    case '10':
-      require('./imperative-vs-declarative/parseDbUrl')
-      break
-    case '11':
-      require('./semigroups')
-      break
-    case '12':
-      require('./semigroups/monoids')
-      break
-    default:
-      read ? console.log('Not a valid option.') : ''
+  const num = parseInt(answer, 10)
+  if (!isNaN(num) && num > 0 && num <= chapters.length) {
+    const chapter = num - 1
+    require(chapters[chapter])
+  } else {
+    return read ? console.log('Not a valid option.') : ''
   }
 }
 
 if (args.length > 2) {
   parseAnswer(args[ 2 ])
 } else {
-  console.log('*******************************************************')
   console.log('*******************************************************')
   console.log('1. Next char from number string')
   console.log('2. Money to float')
@@ -59,7 +47,16 @@ if (args.length > 2) {
   console.log('9. Imperative vs Declarative: wrapExamples')
   console.log('10. Imperative vs Declarative: parseDbUrl')
   console.log('11. Semigroups')
-  console.log('12. Semigroups: Monoids')
+  console.log('12. Safe semigroups: Monoids')
+  console.log('MONOIDS')
+  console.log('\t13. Sum')
+  console.log('\t14. Product')
+  console.log('\t15. Any')
+  console.log('\t16. All')
+  console.log('\t17. Max')
+  console.log('\t18. Min')
+  console.log('\t19. Pair')
+  console.log('*******************************************************')
   console.log('')
 
   const readline = require('readline')
@@ -69,7 +66,7 @@ if (args.length > 2) {
     output: process.stdout
   });
 
-  rl.question('Sample [1-12]?', answer => {
+  rl.question(`Sample [1-${chapters.length}]?`, answer => {
     parseAnswer(answer)
     rl.close()
   })

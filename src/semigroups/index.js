@@ -74,3 +74,4 @@ res = acct1.concat(acct2)
 
 log('Res: ', res.toJS())
 
+

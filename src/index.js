@@ -19,7 +19,19 @@ const chapters = [
   './semigroups/monoids/All',
   './semigroups/monoids/Max',
   './semigroups/monoids/Min',
-  './semigroups/monoids/Pair'
+  './semigroups/monoids/Pair',
+  './semigroups/monoids/Either',
+  './semigroups/monoids/First',
+  './semigroups/monoids/Fn',
+  './semigroups/foldMap',
+  './boxes/LazyBox',
+  './Task',
+  './Task/launchMissiles',
+  './Task/readFile',
+  './functors',
+  './of',
+  './monads',
+  './pure'
 ]
 
 const parseAnswer = (answer, read) => {
@@ -48,14 +60,27 @@ if (args.length > 2) {
   console.log('10. Imperative vs Declarative: parseDbUrl')
   console.log('11. Semigroups')
   console.log('12. Safe semigroups: Monoids')
-  console.log('MONOIDS')
-  console.log('\t13. Sum')
-  console.log('\t14. Product')
-  console.log('\t15. Any')
-  console.log('\t16. All')
-  console.log('\t17. Max')
-  console.log('\t18. Min')
-  console.log('\t19. Pair')
+  console.log('-----------------------------------------------MONOIDS')
+  console.log('13. Sum')
+  console.log('14. Product')
+  console.log('15. Any')
+  console.log('16. All')
+  console.log('17. Max')
+  console.log('18. Min')
+  console.log('19. Pair')
+  console.log('20. Either')
+  console.log('21. First')
+  console.log('22. Fn (broken, compose??)')
+  console.log('-----------------------------------------------')
+  console.log('23. FoldMap')
+  console.log('24. LazyBox')
+  console.log('25. Task')
+  console.log('26. Task: launchMissiles')
+  console.log('27. Task: readFile')
+  console.log('28. Functors')
+  console.log('29. Of')
+  console.log('30. Monads')
+  console.log('31. Pure functions: memoize')
   console.log('*******************************************************')
   console.log('')
 

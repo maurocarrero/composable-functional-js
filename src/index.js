@@ -31,7 +31,12 @@ const chapters = [
   './functors',
   './of',
   './monads',
-  './pure'
+  './pure',
+  './pure/referentialTransparency',
+  './currying',
+  './currying/hasSpaces',
+  './currying/noVowels',
+  './exercises'
 ]
 
 const parseAnswer = (answer, read) => {
@@ -81,6 +86,12 @@ if (args.length > 2) {
   console.log('29. Of')
   console.log('30. Monads')
   console.log('31. Pure functions: memoize')
+  console.log('32. Pure functions: referential transparency')
+  console.log('-----------------------------------------------CURRY')
+  console.log('33. Currying')
+  console.log('34. Currying: hasSpaces')
+  console.log('35. Currying: noVowels')
+  console.log('36. Currying: Exercises')
   console.log('*******************************************************')
   console.log('')
 

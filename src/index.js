@@ -34,9 +34,12 @@ const chapters = [
   './pure',
   './pure/referentialTransparency',
   './currying',
+  './currying/getChildren',
   './currying/hasSpaces',
   './currying/noVowels',
-  './exercises'
+  './exercises',
+  './compose/shout',
+  './compose/last'
 ]
 
 const parseAnswer = (answer, read) => {
@@ -89,9 +92,12 @@ if (args.length > 2) {
   console.log('32. Pure functions: referential transparency')
   console.log('-----------------------------------------------CURRY')
   console.log('33. Currying')
-  console.log('34. Currying: hasSpaces')
-  console.log('35. Currying: noVowels')
-  console.log('36. Currying: Exercises')
+  console.log('34. Currying: getChildren')
+  console.log('35. Currying: hasSpaces')
+  console.log('36. Currying: noVowels')
+  console.log('37. Currying: Exercises')
+  console.log('38. Compose: Shout')
+  console.log('39. Compose: Last')
   console.log('*******************************************************')
   console.log('')
 

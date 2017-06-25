@@ -9,21 +9,22 @@ const expect = require('expect')
 const compose = (f, g) => x => f(g(x))
 
 const head = x => x[ 0 ]
-const reverse = xs => xs.reduce((acc, x) => x.concat(acc), '')
+const reverse = xs => xs.reduce((acc, x) => {
+  return [ x ].concat(acc)
+}, [])
 
-const reverseHead = compose(reverse, head)
+const reverseHead = compose(head, reverse)
 
-let res = reverseHead([
-  [ 'working', 'is ', 'This ' ],
-  [ 'This', 'is', 'not', 'working' ]
-])
+let res = reverseHead(['jumpkick', 'roundhouse', 'uppercut'])
 
-expect(res).toEqual('This is working')
+expect(res).toEqual('uppercut')
 console.log(res)
 
+const last = compose(
+  x => x.toUpperCase(),
+  x => x.concat('!'))
 
-const shout = compose(x => x.toUpperCase(), x => x.concat('!'))
-res = shout(res)
+res = last(res)
 
-expect(res).toEqual('THIS IS WORKING!')
+expect(res).toEqual('UPPERCUT!')
 console.log(res)

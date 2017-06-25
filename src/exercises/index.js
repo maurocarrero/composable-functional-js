@@ -75,3 +75,4 @@ expect(slice(1)(3)([ 'a', 'b', 'c' ])).toEqual([ 'b', 'c' ])
 const take = num => arr => slice(0)(num)(arr)
 
 expect(take(2)([ 'a', 'b', 'c' ])).toEqual([ 'a', 'b' ])
+

@@ -25,9 +25,9 @@ const chapters = [
   './semigroups/monoids/Fn',
   './semigroups/foldMap',
   './boxes/LazyBox',
-  './Task',
-  './Task/launchMissiles',
-  './Task/readFile',
+  './task',
+  './task/launchMissiles',
+  './task/readFile',
   './functors',
   './of',
   './monads',
@@ -39,14 +39,19 @@ const chapters = [
   './currying/noVowels',
   './exercises',
   './compose/shout',
-  './compose/last'
+  './compose/last',
+  './compose/associativity',
+  './compose/pointfree',
+  './compose/debugging',
+  './compose/categoryTheory',
+  './example-application'
 ]
 
 const parseAnswer = (answer, read) => {
   const num = parseInt(answer, 10)
   if (!isNaN(num) && num > 0 && num <= chapters.length) {
     const chapter = num - 1
-    require(chapters[chapter])
+      require(chapters[chapter])
   } else {
     return read ? console.log('Not a valid option.') : ''
   }
@@ -98,6 +103,11 @@ if (args.length > 2) {
   console.log('37. Currying: Exercises')
   console.log('38. Compose: Shout')
   console.log('39. Compose: Last')
+  console.log('40. Compose: Associativity')
+  console.log('41. Compose: Pointfree style')
+  console.log('42. Compose: Debugging')
+  console.log('43. Compose: Category theory')
+  console.log('44. Example Application')
   console.log('*******************************************************')
   console.log('')
 

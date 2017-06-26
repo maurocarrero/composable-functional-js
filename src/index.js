@@ -44,7 +44,8 @@ const chapters = [
   './compose/pointfree',
   './compose/debugging',
   './compose/categoryTheory',
-  './example-application'
+  './example-application',
+  './containers'
 ]
 
 const parseAnswer = (answer, read) => {
@@ -108,6 +109,7 @@ if (args.length > 2) {
   console.log('42. Compose: Debugging')
   console.log('43. Compose: Category theory')
   console.log('44. Example Application')
+  console.log('45. Containers')
   console.log('*******************************************************')
   console.log('')
 
@@ -116,7 +118,7 @@ if (args.length > 2) {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  });
+  })
 
   rl.question(`Sample [1-${chapters.length}]?`, answer => {
     parseAnswer(answer)

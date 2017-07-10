@@ -1,10 +1,10 @@
 const args = process.argv
 
 const chapters = [
-  './next-char-from-number-string',
-  './money-to-float',
-  './either-type',
-  './either-type/getPort',
+  './box/next-char-from-number-string',
+  './box/money-to-float',
+  './box/either-type',
+  './box/either-type/getPort',
   './imperative-vs-declarative/openSite',
   './imperative-vs-declarative/getPrefs',
   './imperative-vs-declarative/streetName',
@@ -37,6 +37,7 @@ const chapters = [
   './currying/getChildren',
   './currying/hasSpaces',
   './currying/noVowels',
+  './currying/modulo',
   './exercises',
   './compose/shout',
   './compose/last',
@@ -45,7 +46,8 @@ const chapters = [
   './compose/debugging',
   './compose/categoryTheory',
   './example-application',
-  './containers'
+  './containers',
+  './functors/applicativeFunctors'
 ]
 
 const parseAnswer = (answer, read) => {
@@ -101,15 +103,17 @@ if (args.length > 2) {
   console.log('34. Currying: getChildren')
   console.log('35. Currying: hasSpaces')
   console.log('36. Currying: noVowels')
-  console.log('37. Currying: Exercises')
-  console.log('38. Compose: Shout')
-  console.log('39. Compose: Last')
-  console.log('40. Compose: Associativity')
-  console.log('41. Compose: Pointfree style')
-  console.log('42. Compose: Debugging')
-  console.log('43. Compose: Category theory')
-  console.log('44. Example Application')
-  console.log('45. Containers')
+  console.log('37. Currying: modulo')
+  console.log('38. Exercises')
+  console.log('39. Compose: Shout')
+  console.log('40. Compose: Last')
+  console.log('41. Compose: Associativity')
+  console.log('42. Compose: Pointfree style')
+  console.log('43. Compose: Debugging')
+  console.log('44. Compose: Category theory')
+  console.log('45. Example Application')
+  console.log('46. Containers')
+  console.log('47. Applicative functors')
   console.log('*******************************************************')
   console.log('')
 

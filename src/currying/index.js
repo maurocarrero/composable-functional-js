@@ -14,3 +14,5 @@ const add10 = add(10)
 
 expect(add10(7)).toEqual(17)
 expect(add10(10)).toEqual(20)
+
+
